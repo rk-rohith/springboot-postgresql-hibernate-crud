@@ -39,6 +39,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    //This method is for delete the employee
     public Map<String, Boolean> deleteEmployee(Long employeeId) throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
